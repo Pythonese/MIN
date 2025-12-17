@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox fx:id="loginContainer" alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gui_client.LoginController">
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
+
+    <Label text="Secure Messenger" textFill="WHITE">
+        <font>
+            <Font name="Arial" size="28"/>
+        </font>
+    </Label>
+
+    <Label text="Global Chat Login" textFill="WHITE" opacity="0.8">
+        <font>
+            <Font name="Arial" size="16"/>
+        </font>
+    </Label>
+
+    <VBox spacing="15" alignment="CENTER">
+        <VBox spacing="5">
+            <Label text="Username" textFill="WHITE">
+                <font>
+                    <Font name="Arial" size="12"/>
+                </font>
+            </Label>
+            <TextField fx:id="usernameField" promptText="Enter username" prefWidth="250" prefHeight="40"/>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Password" textFill="WHITE">
+                <font>
+                    <Font name="Arial" size="12"/>
+                </font>
+            </Label>
+            <PasswordField fx:id="passwordField" promptText="Enter password" prefWidth="250" prefHeight="40"/>
+        </VBox>
+    </VBox>
+
+    <Label fx:id="errorLabel" text="" textFill="RED" maxWidth="250" wrapText="true"/>
+
+    <Button fx:id="loginButton" text="Login" onAction="#handleLogin" prefWidth="250" prefHeight="40"/>
+
+    <Label text="Use any credentials for demo" textFill="WHITE" opacity="0.6">
+        <font>
+            <Font name="Arial" size="11"/>
+        </font>
+    </Label>
+</VBox>

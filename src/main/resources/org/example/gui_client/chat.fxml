@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox fx:id="chatContainer" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gui_client.ChatController">
+    <!-- Header -->
+    <HBox style="-fx-background-color: rgba(0, 0, 0, 0.2);" alignment="CENTER" spacing="10" prefHeight="60">
+        <padding>
+            <Insets left="20" right="20"/>
+        </padding>
+
+        <VBox spacing="2">
+            <Label fx:id="chatTitle" text="Global Chat" textFill="WHITE">
+                <font>
+                    <Font name="Arial" size="16"/>
+                </font>
+            </Label>
+            <Label fx:id="onlineCountLabel" text="Online: 1 user(s)" textFill="LIGHTGRAY">
+                <font>
+                    <Font name="Arial" size="11"/>
+                </font>
+            </Label>
+        </VBox>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <Button text="Logout" onAction="#handleLogout" style="-fx-background-color: rgba(255, 255, 255, 0.2); -fx-text-fill: white; -fx-background-radius: 15; -fx-padding: 5 15;">
+            <font>
+                <Font name="Arial" size="12"/>
+            </font>
+        </Button>
+    </HBox>
+
+    <!-- Messages Area -->
+    <ScrollPane fx:id="scrollPane" VBox.vgrow="ALWAYS">
+        <VBox fx:id="messageArea" spacing="10"/>
+    </ScrollPane>
+
+    <!-- Message Input -->
+    <HBox spacing="10" alignment="CENTER" style="-fx-background-color: rgba(0, 0, 0, 0.1);" prefHeight="80">
+        <padding>
+            <Insets left="20" right="20"/>
+        </padding>
+
+        <TextField fx:id="messageInput" promptText="Type your message here..." HBox.hgrow="ALWAYS" prefHeight="40"/>
+        <Button fx:id="sendButton" text="Send" onAction="#sendMessage" prefWidth="80" prefHeight="40"/>
+    </HBox>
+</VBox>
